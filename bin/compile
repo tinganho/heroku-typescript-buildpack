@@ -90,7 +90,7 @@ fi
   npm prune 2>&1 | indent
 
   status "Installing TypeScript"
-  npm install https://github.com/Microsoft/TypeScript/tarball/e39a2e7078df1b87b02e141958d22ca5e2677adb -g --userconfig $build_dir/.npmrc 2>&1 | indent
+  npm install https://github.com/Microsoft/TypeScript/tarball/master -g --userconfig $build_dir/.npmrc 2>&1 | indent
 )
 
 # Persist goodies like node-version in the slug
@@ -135,6 +135,7 @@ fi
 
 # run typescript build
 status "Build TypeScript files"
+tsc -v
 tsc
 
 # Post package.json to nomnom service
